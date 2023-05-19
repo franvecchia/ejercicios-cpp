@@ -9,19 +9,19 @@ int main () {
 
     while (nota!=-1) {
         totalAlumnos++;
-        if (nota>=6) {
+        if (nota>=6 && nota<=10) {
             totalAprobados++;
-        } else if (nota<=6 && nota!=0) {
+        }else if (nota<6 && nota>0) {
             totalReprobados++;
-        } else if (nota==0) {
+        } else if (nota==0){
             totalAusentes++;
-        } // o if (nota==0) sin else if, y arriba no hace falta el (nota!=0)
+        } 
 
         if (nota>notaMasAlta) {
             notaMasAlta = nota;
         }
 
-        if (nota<notaMasBaja && nota!=0) { //nota!=0 NECESARIO
+        if (nota<notaMasBaja && nota!=0) { //nota!=0 necesario
             notaMasBaja=nota;
         }
         

@@ -4,9 +4,9 @@ using namespace std;
 
 void invertirDatos (float &alturaMaxima, float &alturaMinima) {
     if (alturaMinima>alturaMaxima) {
-        float aux=alturaMaxima; //importante declarar un auxiliar ya que si no se pisarian los datos.
-        alturaMaxima=alturaMinima;
-        alturaMinima=aux;
+        float aux = alturaMaxima; //importante declarar un auxiliar ya que si no se pisarian los datos.
+        alturaMaxima = alturaMinima;
+        alturaMinima = aux;
         cout << "Los datos de las mareas han sido invertidos ya que la altura maxima era menor a la minima." << endl;
     }
 }
