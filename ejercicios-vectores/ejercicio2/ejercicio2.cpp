@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void imprimirSegunUltimoNumero (int N, int unArreglo[], int positivos[], int negativos[], int contPositivos, int contNegativos) {
+/* void imprimirSegunUltimoNumero (int N, int unArreglo[], int positivos[], int negativos[], int contPositivos, int contNegativos) {
     if (unArreglo[N-1]<10) {
         for (int j=0;j<contNegativos;j++) {
             cout << negativos[j] << endl;
@@ -11,7 +11,7 @@ void imprimirSegunUltimoNumero (int N, int unArreglo[], int positivos[], int neg
             cout << positivos[k] << endl;
         }
     }
-}
+} */
 
 int main () {
     int N, contNegativos=0, contPositivos=0;
@@ -31,7 +31,16 @@ int main () {
         }
 
         if (i==N-1) {
-            imprimirSegunUltimoNumero(N, unArreglo, positivos, negativos, contPositivos, contNegativos);
+            //imprimirSegunUltimoNumero(N, unArreglo, positivos, negativos, contPositivos, contNegativos);
+            if (unArreglo[i]<10) {
+                for (int j=0;j<contNegativos;j++) {
+                    cout << negativos[j] << endl;
+                }
+            } else {
+                for (int k=0;k<contPositivos;k++) {
+                    cout << positivos[k] << endl;
+                }
+            }
         }
     }
     return 0;

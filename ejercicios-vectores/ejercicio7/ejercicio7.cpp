@@ -12,7 +12,6 @@ int calcularMaximo (int DATO[], int maximo, int i, int &contMaximo) {
 }
 
 int calcularSegundoMaximo(int j, int maximo, int segundoMaximo, int DATO[], int contMaximo) {
-    
     return segundoMaximo;
 }
 

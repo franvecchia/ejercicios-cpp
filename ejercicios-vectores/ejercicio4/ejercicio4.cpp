@@ -10,7 +10,6 @@ int factorialNumero (int numeroAFactorizar) {
     return factorial;
 }
 
-
 int main () {
     int N, numeroAFactorizar;
     cout << "Ingrese el tamanio del vector: ";
