@@ -44,16 +44,17 @@ int main () {
     cout << "El promedio de las componentes de la matriz fue: " << acumPromedio/cont << endl;
 
     // c
-    /* int VECSUMCOL[N];
-    for (int j=0;j<N;j++) {
+    int VECSUMCOL[N]={0};
+
+    for (int j=0; j<N; j++) {
         for (int i=0;i<M;i++) {
             VECSUMCOL[j] += MATRIZA[i][j];
         }
     }
 
-    for (int i=0;i<N;i++) {
-        cout << VECSUMCOL[i] << endl;
-    } */
+    for (int j = 0; j < N; j++) {
+        cout << VECSUMCOL[j] << endl;
+    }
 
     // d
     int VECMAXFIL[M];

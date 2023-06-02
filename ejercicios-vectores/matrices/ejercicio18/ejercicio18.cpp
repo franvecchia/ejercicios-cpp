@@ -24,14 +24,28 @@ int main () {
     }
 
     if (sumatoriaPrincipal > sumatoriaSecundaria) {
-        cout << "La sumatoria de la diagonal principal es mayor que la secundaria con un total de: " << sumatoriaPrincipal;
+        cout << "La sumatoria de la diagonal principal es mayor que la secundaria con un total de: " << sumatoriaPrincipal << endl;
     } else if (sumatoriaSecundaria > sumatoriaPrincipal) {
-        cout << "La sumatoria de la diagonal secundaria es mayor que la principal con un total de: " << sumatoriaSecundaria;
+        cout << "La sumatoria de la diagonal secundaria es mayor que la principal con un total de: " << sumatoriaSecundaria << endl;
     } else {
-        cout << "Las sumatorias de las diagonales son iguales.";
+        cout << "Las sumatorias de las diagonales son iguales." << endl;
     }
 
     // b (suponiendo que N es par)
+    int sumatoriaCuarto = 0, mitad=N/2;
+    for (int i=0; i<mitad; i++) {
+        for (int j=0; j<mitad; j++) {
+            sumatoriaCuarto += CUADRADA[i][j];
+        }
+    }
+
+    for (int i=0; i<mitad; i++) {
+        for (int j=0; j<mitad; j++) {
+            if (CUADRADA[i][j] > sumatoriaCuarto) {
+                cout << CUADRADA[i][j] << endl;
+            }
+        }
+    }
 
     // c 
     int triangularInferior=0, triangularSuperior=0;
