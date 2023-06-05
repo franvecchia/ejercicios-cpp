@@ -2,71 +2,173 @@
 using namespace std;
 
 int main () {
-    int N, sumatoriaPrincipal=0, sumatoriaSecundaria=0;
+    int N, sumatoriaDiagonalPrincipal=0, sumatoriaDiagonalSecundaria=0;
     cout << "Ingrese el tamanio de filas y columnas: ";
     cin >> N;
 
-    int CUADRADA[N][N];
+    int cuadrada[N][N];
 
-    for (int i=0;i<N;i++) {
-        for (int j=0;j<N;j++) {
-            cout << "Ingrese el numero en la posicion [" << i << "][" << j << "]: ";
-            cin >> CUADRADA[i][j];
-        }
-    }
     // a
     for (int i=0;i<N;i++) {
-        sumatoriaPrincipal += CUADRADA[i][i];
+        for (int j=0;j<N;j++) {
+            cout << "Ingrese el valor en la posicion: [" << i << "][" << j << "]: ";
+            cin >> cuadrada[i][j];
+        }
     }
 
-    for (int i = 0; i < N; i++) {
-        sumatoriaSecundaria += CUADRADA[i][N - 1 - i];
+    for (int i=0;i<N;i++) {
+        sumatoriaDiagonalPrincipal+=cuadrada[i][i];
     }
 
-    if (sumatoriaPrincipal > sumatoriaSecundaria) {
-        cout << "La sumatoria de la diagonal principal es mayor que la secundaria con un total de: " << sumatoriaPrincipal << endl;
-    } else if (sumatoriaSecundaria > sumatoriaPrincipal) {
-        cout << "La sumatoria de la diagonal secundaria es mayor que la principal con un total de: " << sumatoriaSecundaria << endl;
+    for (int i=0;i<N;i++) {
+        sumatoriaDiagonalSecundaria+=cuadrada[i][N-1-i];
+    }
+
+    if (sumatoriaDiagonalPrincipal>sumatoriaDiagonalSecundaria) {
+        cout << "Los elementos de la diagonal principal son: " << endl; 
+        for (int i=0;i<N;i++) {
+            cout << cuadrada[i][i] << endl;
+        }
+    } else if (sumatoriaDiagonalSecundaria>sumatoriaDiagonalPrincipal) {
+        cout << "Los elementos de la diagonal secundaria son: " << endl;
+        for (int i=0;i<N;i++) {
+            cout << cuadrada[i][N-1-i] << endl;
+        }
     } else {
-        cout << "Las sumatorias de las diagonales son iguales." << endl;
+        cout << "Las sumatorias son iguales." << endl;
     }
 
-    // b (suponiendo que N es par)
-    int sumatoriaCuarto = 0, mitad=N/2;
-    for (int i=0; i<mitad; i++) {
-        for (int j=0; j<mitad; j++) {
-            sumatoriaCuarto += CUADRADA[i][j];
+    // b
+    int maximo, acumCuartos=0, filaMatrizMaxima=0, columnaMatrizMaxima=0;
+    int matrizMaxima[N/2][N/2]={0};
+
+    for (int i=0;i<N/2;i++) {
+        for (int j=0;j<N/2;j++) {
+            acumCuartos+=cuadrada[i][j];
+            matrizMaxima[filaMatrizMaxima][columnaMatrizMaxima]=cuadrada[i][j];
+            columnaMatrizMaxima++;
+        }
+        columnaMatrizMaxima=0;
+        filaMatrizMaxima++;
+    }
+
+    maximo=acumCuartos;
+    acumCuartos=0;
+    filaMatrizMaxima=0;
+    columnaMatrizMaxima=0;
+
+    for (int i=0;i<N/2;i++) {
+        for (int j=N/2;j<N;j++) {
+            acumCuartos+=cuadrada[i][j];
         }
     }
 
-    for (int i=0; i<mitad; i++) {
-        for (int j=0; j<mitad; j++) {
-            if (CUADRADA[i][j] > sumatoriaCuarto) {
-                cout << CUADRADA[i][j] << endl;
+
+    if (acumCuartos>maximo) {
+        maximo = acumCuartos;
+        for (int i=0;i<N/2;i++) {
+            for (int j=N/2;j<N;j++) {
+                matrizMaxima[filaMatrizMaxima][columnaMatrizMaxima]=cuadrada[i][j];
+                columnaMatrizMaxima++;
             }
+            columnaMatrizMaxima=0;
+            filaMatrizMaxima++;
+        }
+    }
+    acumCuartos=0;
+    filaMatrizMaxima=0;
+    columnaMatrizMaxima=0;
+
+    for (int i=N/2;i<N;i++) {
+        for (int j=0;j<N/2;j++) {
+            acumCuartos+=cuadrada[i][j];
         }
     }
 
-    // c 
-    int triangularInferior=0, triangularSuperior=0;
+    if (acumCuartos>maximo) {
+        maximo = acumCuartos;
+        for (int i=N/2;i<N;i++) {
+            for (int j=0;j<N/2;j++) {
+                matrizMaxima[filaMatrizMaxima][columnaMatrizMaxima]=cuadrada[i][j];
+                columnaMatrizMaxima++;
+            }
+            columnaMatrizMaxima=0;
+            filaMatrizMaxima++;
+        }
+    }
+    acumCuartos=0;
+    filaMatrizMaxima=0;
+    columnaMatrizMaxima=0;
+
+    for (int i=N/2;i<N;i++) {
+        for (int j=N/2;j<N;j++) {
+            acumCuartos+=cuadrada[i][j];
+        }
+    }
+
+    if (acumCuartos>maximo) {
+        maximo = acumCuartos;
+        for (int i=N/2;i<N;i++) {
+            for (int j=N/2;j<N;j++) {
+                matrizMaxima[filaMatrizMaxima][columnaMatrizMaxima]=cuadrada[i][j];
+                columnaMatrizMaxima++;
+            }
+            columnaMatrizMaxima=0;
+            filaMatrizMaxima++;
+        }
+    }
+    acumCuartos=0;
+    filaMatrizMaxima=0;
+    columnaMatrizMaxima=0;
+
+    cout << "La matriz maxima es: " << endl;
+    for (int i=0;i<N/2;i++) {
+        for (int j=0;j<N/2;j++) {
+            cout << matrizMaxima[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    // c
+    int sumatoriaInferior=0, sumatoriaSuperior=0;
     for (int i=0;i<N;i++) {
         for (int j=0;j<N;j++) {
-            if (i>j) {
-                triangularInferior += CUADRADA[i][j];
+            if (i>=j) {
+                sumatoriaInferior+=cuadrada[i][j];
             }
 
-            if (j>i) {
-                triangularSuperior += CUADRADA[i][j];
+            if (j>=i) {
+                sumatoriaSuperior+=cuadrada[i][j];
             }
         }
     }
 
-    if (triangularSuperior > triangularInferior) {
-        cout << "La sumatoria de la triangular superior es mayor a la inferior con un total de: " << triangularSuperior << endl;
-    } else if (triangularInferior > triangularSuperior) {
-        cout << "La sumatoria de la triangular inferior es mayor a la superior con un total de: " << triangularInferior << endl;
+    int matrizTriangularMaxima[N][N]={};
+
+    if (sumatoriaSuperior>sumatoriaInferior) {
+        for (int i=0;i<N;i++) {
+            for (int j=0;j<N;j++) {
+                if (j>=i) {
+                    matrizTriangularMaxima[i][j]=cuadrada[i][j];
+                }
+            }
+        }
     } else {
-        cout << "La sumatoria de las triangulares son iguales." << endl;
+        for (int i=0;i<N;i++) {
+            for (int j=0;j<N;j++) {
+                if (i>=j) {
+                    matrizTriangularMaxima[i][j]=cuadrada[i][j];
+                }
+            }
+        }
+    }
+
+    cout << "Los elementos de la triangular maxima son: " << endl;
+    for (int i=0;i<N;i++) {
+        for (int j=0;j<N;j++) {
+            cout << matrizTriangularMaxima[i][j] << " ";
+        }
+        cout << endl;
     }
 
     return 0;
