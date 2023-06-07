@@ -9,7 +9,7 @@ struct Fecha {
 
 struct Boleta {
     int legajo;
-    string codigoMateria;
+    int codigoMateria;
     Fecha fecha;
     string apellido;
 };
