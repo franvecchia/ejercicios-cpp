@@ -8,10 +8,10 @@ struct Fecha {
 };
 
 struct Boleta {
-    string apellido;
     int legajo;
     string codigoMateria;
     Fecha fecha;
+    string apellido;
 };
 
 int main () {
@@ -22,17 +22,17 @@ int main () {
     cin >> boletas[i].legajo;
 
     while (boletas[i].legajo!=0 && i<100) {
-        cout << "Ingrese su apellido: ";
-        cin >> boletas[i].apellido;
         cout << "Ingrese el codigo de materia: ";
         cin >> boletas[i].codigoMateria;
-        cout << "Ingrese el anio del examen: ";
-        cin >> boletas[i].fecha.anio;
-        cout << "Ingrese el mes del examen: ";
-        cin >> boletas[i].fecha.mes;
         cout << "Ingrese el dia del examen: ";
         cin >> boletas[i].fecha.dia;
-
+        cout << "Ingrese el mes del examen: ";
+        cin >> boletas[i].fecha.mes;
+        cout << "Ingrese el anio del examen: ";
+        cin >> boletas[i].fecha.anio;
+        cout << "Ingrese su apellido: ";
+        cin >> boletas[i].apellido;
+        
         i++;
         cout << "Ingrese su legajo: ";
         cin >> boletas[i].legajo;
@@ -42,11 +42,11 @@ int main () {
 
     for(int j=0; j<i;j++){
         inscripciones[j].legajo = boletas[j].legajo;
-        inscripciones[j].apellido = boletas[j].apellido;
         inscripciones[j].codigoMateria = boletas[j].codigoMateria;
-        inscripciones[j].fecha.anio = boletas[j].fecha.anio;
-        inscripciones[j].fecha.mes = boletas[j].fecha.mes;
         inscripciones[j].fecha.dia = boletas[j].fecha.dia;
+        inscripciones[j].fecha.mes = boletas[j].fecha.mes;
+        inscripciones[j].fecha.anio = boletas[j].fecha.anio;
+        inscripciones[j].apellido = boletas[j].apellido;
     }
 
     for (int j=0;j<i;j++) {
