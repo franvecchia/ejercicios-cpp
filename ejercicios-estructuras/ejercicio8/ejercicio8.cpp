@@ -29,10 +29,7 @@ void procesarPedidos(Productos vectorProductos[], int cantProductos, Cliente vec
                     cout << "Cantidad pedida: " << vectorClientes[i].cantidadPedida << endl;
                     cout << "----------------" << endl;
                 } else {
-                    vectorRechazos[cantRechazos].cantidadPedida=vectorClientes[i].cantidadPedida;
-                    vectorRechazos[cantRechazos].codigoProducto=vectorClientes[i].codigoProducto;
-                    vectorRechazos[cantRechazos].numeroCliente=vectorClientes[i].numeroCliente;
-                    vectorRechazos[cantRechazos].numeroPedido=vectorClientes[i].numeroPedido;
+                    vectorRechazos[cantRechazos] = vectorClientes[i];
                     cantRechazos++;
                 }
             }
@@ -42,14 +39,18 @@ void procesarPedidos(Productos vectorProductos[], int cantProductos, Cliente vec
         j=0;
     }
 
-    cout << "Pedidos rechazados: " << endl;
-    for (int i=0;i<cantRechazos;i++) {
-        cout << "Pedido: " << i << endl;
-        cout << "Numero de pedido: " << vectorRechazos[i].numeroPedido << endl;
-        cout << "Numero de cliente: " << vectorRechazos[i].numeroCliente << endl;
-        cout << "Codigo de producto: " << vectorRechazos[i].codigoProducto << endl;
-        cout << "Cantidad Pedida: " << vectorRechazos[i].cantidadPedida << endl;
-        cout << "----------------" << endl;
+    if (cantRechazos>0) {
+        cout << "Pedidos rechazados: " << endl;
+        for (int i=0;i<cantRechazos;i++) {
+            cout << "Pedido: " << i << endl;
+            cout << "Numero de pedido: " << vectorRechazos[i].numeroPedido << endl;
+            cout << "Numero de cliente: " << vectorRechazos[i].numeroCliente << endl;
+            cout << "Codigo de producto: " << vectorRechazos[i].codigoProducto << endl;
+            cout << "Cantidad Pedida: " << vectorRechazos[i].cantidadPedida << endl;
+            cout << "----------------" << endl;
+        }
+    } else {
+        cout << "No hubo pedidos rechazados." << endl;
     }
 }
 
