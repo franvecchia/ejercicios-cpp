@@ -71,12 +71,6 @@ int main () {
         {127, 235, 5, 8}
     };
 
-    vectorClientes[0]={123, 231, 1, 10};
-    vectorClientes[1]={124, 232, 2, 5};
-    vectorClientes[2]={125, 233, 1, 5};
-    vectorClientes[3]={126, 234, 4, 3};
-    vectorClientes[4]={127, 235, 5, 8};
-
     Cliente vectorRechazos[cantClientes];
     int cantRechazos=0;
 
