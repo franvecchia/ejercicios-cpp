@@ -18,17 +18,17 @@ void concatenarInscripciones(Boleta inscripcionesAnt[], int cantInscripcionesAnt
     int cantTotal = cantInscripcionesAnt + cantInscripcionesMay;
     int j=0;
     for (j=0;j<cantInscripcionesAnt;j++) {
-        inscripcionesTot[j].legajo = inscripcionesAnt[j].legajo;
-        inscripcionesTot[j].codigoMateria = inscripcionesAnt[j].codigoMateria;
-        inscripcionesTot[j].fecha.dia = inscripcionesAnt[j].fecha.dia;
-        inscripcionesTot[j].fecha.mes = inscripcionesAnt[j].fecha.mes;
-        inscripcionesTot[j].fecha.anio = inscripcionesAnt[j].fecha.anio;
-        inscripcionesTot[j].apellido = inscripcionesAnt[j].apellido;
+        inscripcionesTot[j].legajo = inscripcionesAnt[j].legajo ;
+        inscripcionesTot[j].codigoMateria = inscripcionesAnt[j].codigoMateria ;
+        inscripcionesTot[j].fecha.dia = inscripcionesAnt[j].fecha.dia ;
+        inscripcionesTot[j].fecha.mes = inscripcionesAnt[j].fecha.mes ;
+        inscripcionesTot[j].fecha.anio = inscripcionesAnt[j].fecha.anio ;
+        inscripcionesTot[j].apellido = inscripcionesAnt[j].apellido ;
     }
 
-    for (int i=cantInscripcionesAnt;i<cantTotal;i++) {
-        inscripcionesTot[j].legajo = inscripcionesMay[i].legajo;
-        inscripcionesTot[j].codigoMateria = inscripcionesMay[i].codigoMateria;
+    for (int i=0;i<cantInscripcionesMay;i++){
+        inscripcionesTot[j].legajo = inscripcionesMay[i].legajo ;
+        inscripcionesTot[j].codigoMateria = inscripcionesMay[i].codigoMateria ;
         inscripcionesTot[j].fecha.dia = inscripcionesMay[i].fecha.dia;
         inscripcionesTot[j].fecha.mes = inscripcionesMay[i].fecha.mes;
         inscripcionesTot[j].fecha.anio = inscripcionesMay[i].fecha.anio;
@@ -38,6 +38,7 @@ void concatenarInscripciones(Boleta inscripcionesAnt[], int cantInscripcionesAnt
 }
 
 int main () {
+    
     int cantInscripcionesAnteriores = 10;
     Boleta inscripcionesAnteriores[cantInscripcionesAnteriores] = {
         {12345678, 112233, {01, 03, 2023}, "Perez"}, 
@@ -52,7 +53,7 @@ int main () {
         {12348678, 222333, {01, 03, 2023}, "Lopez"}
     };
     
-    int cantInscripcionesMayo=5;
+    int cantInscripcionesMayo=5;  
     Boleta inscripcionesMayo[cantInscripcionesMayo]={
         {23456711, 112233, {01, 05, 2023}, "Roig"}, 
         {23456811, 112233, {01, 05, 2023}, "Paredes"}, 
@@ -65,7 +66,7 @@ int main () {
     Boleta inscripcionesTotales[cantInscripcionesTotales];
     concatenarInscripciones(inscripcionesAnteriores, cantInscripcionesAnteriores, inscripcionesMayo, cantInscripcionesMayo, inscripcionesTotales);
 
-    for (int j=0;j<cantInscripcionesTotales; j++) {
+    for (int j=0;j<cantInscripcionesTotales; j++){
         cout << j << endl;
         cout << "Legajo: " << inscripcionesTotales[j].legajo << endl;
         cout << "Codigo de la materia: " << inscripcionesTotales[j].codigoMateria << endl;

@@ -8,8 +8,8 @@ int main () {
         cout << "Ingrese un numero: ";
         cin >> numeros;
 
-        if (numeros>mayor) {
-            mayor = numeros;
+        if (numeros>mayor || i==0) {
+            mayor=numeros;
         }
     }
 

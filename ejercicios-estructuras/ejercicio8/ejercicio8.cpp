@@ -66,6 +66,7 @@ int main () {
     };
     int cantClientes=5;
     Cliente vectorClientes[100]={
+        {123, 231, 1, 10},
         {124, 232, 2, 5},
         {125, 233, 1, 5},
         {126, 234, 4, 3},
