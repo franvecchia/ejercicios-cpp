@@ -99,6 +99,6 @@ int main () {
     };
 
     apareo(libros, 5, deposito, 5);
-
+    
     return 0;
 }

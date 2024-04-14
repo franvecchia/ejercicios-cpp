@@ -54,7 +54,9 @@ void emitirListado (Venta ventas[], Modelo modelos[], int cantVentas, int cantMo
             bool encontrado=false;
             string modeloVendido;
 
-            // por cada elemento del vector de ventas, hay que buscar el nombreModelo con el idModelo, para poder mostrarlo en el listado.
+            /* por cada elemento del vector de ventas, hay que buscar el nombreModelo correspondiente al idModelo de cada venta, 
+            al encontrarlo en el vector de modelos, podemos tomar el nombre del modelo correspondiente a ese id, 
+            para luego mostrarlo en el listado.*/
             while (cont<cantModelos && encontrado==false) {
                 if (ventas[i].idModelo == modelos[cont].idModelo) {
                     modeloVendido=modelos[cont].nombreModelo;
@@ -71,13 +73,13 @@ void emitirListado (Venta ventas[], Modelo modelos[], int cantVentas, int cantMo
         cout << "Total de ventas de la fecha: "<< totalPorFecha << endl;
         totalVentas+=totalPorFecha;
 
-        if (maxVentas<totalPorFecha) {
-            maxVentas = totalPorFecha;
+        if (totalPorFecha>maxVentas) {
+            maxVentas=totalPorFecha;
             fechaMayor=ventas[i-1].fecha;
         }
     }
     cout << "Total de ventas: " << totalVentas << endl;
-    cout << "La fecha que mas automovil es se vendieron: " << fechaMayor << endl;
+    cout << "La fecha que mas automoviles se vendieron: " << fechaMayor << endl;
 }
 
 int main () {
@@ -86,6 +88,7 @@ int main () {
     int numeroABorrar=8;
 
     vectorSinNumero(vector, numeroABorrar);
+    cout << "-----------------" << endl;
 
     // prueba ejercicio 2.
     Modelo modelos[5]={
