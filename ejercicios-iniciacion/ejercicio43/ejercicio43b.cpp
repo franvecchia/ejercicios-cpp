@@ -8,7 +8,6 @@ void calcularCostoAbono(int costoAbono, int minutosLibres, int cargoPorMinuto, i
     }
 
     montoTotal = (costoAbono + (minutosExcedidos * cargoPorMinuto)) *1.21;
-
 }
 
 int main() {

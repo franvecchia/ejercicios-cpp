@@ -1,10 +1,23 @@
 #include <iostream>
 using namespace std;
 
-int main () {
-    string palabra[]={"C", "H", "U", "B", "U", "T"};
+int size (string vector) {
+    int cant=0;
 
-    int i=0, N=6;
+    while (vector[cant] != '\0') {
+        cant++;
+    }
+
+    return cant;
+}
+
+int main () {
+    string palabra={'C', 'H', 'U', 'B', 'U', 'T'};
+
+    int i=0, N=size(palabra);
+
+    cout << N << endl;
+
     bool resultado=true;
     while (i<N && resultado==true) {
         if (palabra[i] == palabra[N-1-i]) {

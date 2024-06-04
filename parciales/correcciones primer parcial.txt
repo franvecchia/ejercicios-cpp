@@ -1,0 +1,465 @@
+Notas parcial 1:
+
+Andres Castro: 7
+Ejercicio 1:
+- la condición del while era (idEscuderia != -1 && cantEscuderia<20), el tuyo fue (idEscuderia != 0 || cantEscuderia==20).
+- El acumEscuderia iba afuera del for, sino se va a resetear en 0 cada vez que ingreso una nueva edad.
+- nunca incrementas acuEdades ni acuPromedio (las estas pasando como 0 a las funciones).
+- en las funciones, si devolves el mayor no hace falta recibirlo por referencia.
+- el calcularMayorEscuderia era mejor afuera del for, cuando ya tengo el acumulador total. (así calculo una sola vez y no 10 veces).
+Ejercicio 2:
+- en algunos casos, la distancia va a estar mal calculada, ej: si tengo un 2 y un 8 va a calcular distancia 6, y con tu for (i=1, i<=distancia, i++), va a estar incluido el 1 y no el 7, necesitaría en ese caso (3,4,5,6,7), el for correcto era (i=menor+1;i<mayor;i++).
+
+Enrique Tellez: 9 
+Ejercicio 1:
+- en el while iba && en vez de ||.
+- en calcularMayorEscuderia, falta cambiar el mayor en caso de que sea.
+Ejercicio 2:
+- ok
+
+Augusto Menendez Conde: 9 
+Ejercicio 1:
+- podrías haber usado el for de los pilotos en el while en vez de usar un while y dos for, te ahorrabas un bucle (pierde eficiencia el código).
+- falta resetear edad_promedio a 0 en el while.
+Ejercicio 2: 
+- el for en vez de (i=A; i<B-1;i++), era (i=A+1; i<B; i++).
+
+Franco Maldonado: 6
+Ejercicio 1:
+- En calcularMayorEscuderia: si declaras las variables en la función se van a pisar todo el tiempo, debería recibirlas por parámetro.
+- la declaración de escuderiaMayor va afuera del while, si no se va a reiniciar todo el tiempo.
+Ejercicio 2:
+- no realiza.
+
+Mariano Ariel Rodriguez: 5
+Ejercicio 1:
+- en el while falta la condición contador<20.
+- no declaras el tipo de la variable en las funciones.
+- en calcularMayorEdad: nunca declaras las variables de mayor, y una función nunca puede devolver dos variables(grave). Tampoco pedia el nombre del piloto. No es necesario recibir por referencia edad y piloto.
+- en calcularMayorEscuderia: nunca declaras las variables de mayor, donde se verá reflejado el resultado??, no es necesario recibir por referencia. 
+- falta en cin del idEscuderia al final del while para volver a ingresarlo.
+Ejercicio 2:
+- ok
+
+Antonella Videla: 8
+- mejor un while que un do while (es probable que se ingrese -1 directamente).
+- la condición del while es && en vez de ||.
+- la declaración de sumaEdadesPilotosEscuderia iba en el while para que se resetee.
+- en calcularMayorEscuderia: es necesario recibir por referencia la variable sumaEdadesPilotosMayorExperiencia, para que cambie en caso de que se cumpla.
+Ejercicio 2:
+- ok.
+
+Juan Cruz Demarco: 3
+- esta mal la lógica en el main, hay un do while de mas y el for esta mal el rango.
+- falta la opción que se ingrese -1 directamente (pedis el nombre afuera del while).
+- la invocación de calcularMayorEdad iba adentro del for.
+- la invocación de calcularMayorEscuderia y informarCategoria iba adentro del while.
+- calcularMayorEdad: recibe cosas de mas, recibís por parámetro el mayor y también lo declaras en la función.
+- calcumarMayorEscuderia: el mayor lo debería recibir y no declararlo en la función sino se pisa todo el tiempo.
+Ejercicio 2:
+- no realiza. 
+
+German Peini: 4
+Ejercicio 1:
+- la condición del while es && en vez de ||.
+- el primer pedido de idEscuderia debería ir fuera del while (es posible que se ingrese -1 directamente), y otro pedido al final del while.
+- no guardas en variables la invocación a las funciones.
+- en las funciones, no declaras el tipo de dato de las variables recibidas por parámetro.
+- no acumulas correctamente la edad.
+- edadTotal debería resetearse a 0 en el while, para que vuelva a arrancar con otra escudería.
+- en calcularMayorEdad: no recibe edadPilotoMayor, donde esta declarada?.
+- en calcularMayorEscuderia: no recibis escuderiaMayor, tampoco cambias edadMayorEscuderia.
+Ejercicio 2:
+- faltó el else.
+- ok.
+
+Francisco Ranieri: 3
+Ejercicio 1:
+- en las funciones, las variables por parámetro no están definidos los tipos de dato.
+- en calcularMayorEdad: el return va fuera del if.
+- en calcularMayorEscuderia: pedía el nombre de la escudería, no la edad sumada (no recibe esos parametros), el return va fuera del if.
+- el primer bucle era un while con doble condición y no un for.
+- no guardas en variable la invocación a las funciones.
+- esta mal acumulado el sumatoriaEdad.
+Ejercicio 2:
+- mal interpretado.
+
+Gonzalo Sabadin: 6
+Ejercicio 1:
+- el pedido del nombre de la escuderia debería estar dentro del while.
+- la invocación de calcularMayorEscuderia debería estar dentro del while.
+- en calcularMayorEdad: pilotoMasGrande debería recibirlo por parámetro.
+- en calcularMayorEscuderia: si ya recibis promedioMayorEscuderia por parámetro, no hace falta declararlo en la función (está duplicado).
+Ejercicio 2:
+- debería ser numeroFinal en vez de numeroFinal-1.
+
+Parera Julian Ignacio:
+Ejercicio 1:
+- mejor un while que un do while (es probable que se ingrese -1).
+- la condición del while es && en vez de ||.
+- en calcularMayorEdad: mayorEdadPiloto debería recibirla por parámetro en vez de declararla en la función.
+- en informarCategoriaEdad: lo hiciste con la sumatoria en vez de con el promedio.
+Ejercicio 2:
+- ok
+
+Faoro Nahuel: 4
+Ejercicio 1:
+- el cin de nombreEscuderia debería ir dentro del while.
+- no es necesario la edad anterior del piloto.
+- la invocación de calcularMayorEscuderia es mejor fuera del for (para que calcule una vez en vez de 10).
+- hay dos variables suma y total, no son necesario dos.
+- acumulas mal el total.
+- la variable total debería estar declarada fuera del for y en el while.
+- a calcularMayorEscuderia no le pasaste parámetros.
+- en calcularMayorEdad: edadPilotoMax debería recibirla por parámetro y no declararla, hay dos variables de max, una no declarada, devolves la que no esta declarada. Mal calculado el mayor.
+- en calcularMayorEscuderia: no calcula, solo acumula.
+Ejercicio 2: 
+- no realiza.
+
+Lucas Emmanuel Ojeda: 
+Ejercicio 1:
+- la condición del while era && en vez de ||.
+- el primer pedido de escuderia iba fuera del while (es probable que se ingrese -1).
+- calculaste la edad mas alta en el main y no en la función.
+- la invocación de calcular mayor edad iba adentro del for.
+- sumaEdad debe declararse o resetearse en el while.
+- calcularMayorEdad y calcularMayorEscuderia: mal implementadas.
+Ejercicio 2:
+- ok
+
+Diego Acosta: 8 
+Ejercicio:
+- mejor un while que un do while (es probable que se ingrese -1 directamente).
+- en calcularMayorEdad y calcularMayorEscuderia: si las recibís por referencia y las invocás, debería ser void en vez de devolver valores.
+Ejercicio 2:
+
+- la i del for iba desde a+1 en vez de a.
+
+Carlos Javier Hazañas: 5
+Ejercicio 1:
+- en el while la condición era && en vez de ||, si inicializas i=0, i debería ser <20 y no <=20.
+- el nombre de la escudería debería pedirlo adentro del while (es probable que se ingrese -1).
+- hay un do en el while que no era necesario.
+- la declaración de sumaEdadPiloto iba dentro del while para que se resetee en cada iteración.
+- en calcularMayorEdad: edadPilotoMayor debería recibirlo por parámetro y no declararlo en la función, sino se va a pisar todo el tiempo.
+- en calcularMayorEscuderia: lo mismo con escuderiaMayorEdad y mayorEscuderia(string), hay que recibirlos por parámetro (uno devolverlo y otro por referencia).
+- informarCategoriaEdad: debería ser void en vez de float.
+Ejercicio 2:
+- esta de mas la primer condición en las dos del for.
+- suma iba declarado fuera del for, sino se va a resetear en 0 en cada iteración.
+
+Julieta Costenaro: 6
+Ejercicio 1:
+- la condición del while era && en vez de ||.
+- no esta el pedido del nombre de la escudería.
+- la declaración de edadTotal debería ir dentro del while para que se resetee en cada iteración.
+- la invocación de calcularMayorEscuderia es mejor en el while y no en el for (para que calcule una sola vez y no 10 veces).
+- en calcularMayorEscuderia: falta recibir el nombre, y nombreMasExp debería recibirlo por referencia para que cambie en caso de que sea necesario.
+Ejercicio 2:
+- ok
+
+Franco Borchetta: 3
+Ejercicio 1:
+- mejor un while que un do while (es posible que se ingrese -1 directamente).
+- la condición del while es (idEscuderia != -1 && escuderiaMaxima<20), el tuyo fue (idEscuderia == -1 || escuderiaMaxima != 20).
+- sumatoriaEdad debería estar declarado dentro del while, para que se resetee en cada iteración.
+- la invocación de calcularMayorEscuderia y informarCategoriaEdad deberían estar en el while y no en el for.
+- en calcularMayorEdad: mayorEdad debería recibirlo y no declararlo en la función, sino se pisaría constantemente, no la retornas (habría que retornarla o recibirla por referencia).
+- en calcularMayorEscuderia: lo mismo conEscuderiaMayor y nombreEscuderiaMayor, debería recibirlo y no declararlo (uno retornarlo y otro por referencia, o los dos por referencia).
+- informarCategoriaEdad no hace falta que devuelva un int ya no que no es necesario usarlo, solo imprimir por pantalla (void), no era necesario recibir el nombreEscuderia ni categoria.
+Ejercicio 2:
+- hiciste un main en vez de una función.
+- mal interpretado el ejercicio.
+
+Matias Raimondi: 6
+Ejercicio 1:
+- la condición del while es && en vez de ||.
+- en la condición del while, la cantidad de escuderías debería ser <20, no el idEscuderia. (también habría que sumarlo en el while).
+- hay que volver a pedir un idEscuderia y cerrar el while en edades pilotos, sino quedaría un bucle infinito.
+- en calcularMayorEscuderia: si devolves mayorEscuderia no hace falta recibirlo por referencia.
+- en calcularMayorEdad: lo mismo con mayorEdad.
+Ejercicio 2:
+- la condición del for es numero1+1, y i<numeroB (no los incluye).
+- había que mostrar los números no la suma parcial.
+
+Adriel Reina: 9
+- la condición del while es && en vez de ||.
+Ejercicio 2:
+ok
+
+Abril Correa Nadal: 4
+- mejor un while que un do while (puede ingresarse -1 directamente).
+- tu for va a iterar 11 veces en vez de 10. (int i=0;i<=10;i++).
+- no reseteas el acumuladorEdad en el while.
+- hay que volver a pedir un idEscuderia al final del while, sino cuando lo ingresas al principio volvería a pedir todos los datos.
+- en calcularMayorEdad: edadPiloto no es necesario por referencia, como lo invocaste en el main (en vez de guardarlo en una variable) debería ser void y no int.
+- en calcularMayorEscuderia: acumuladorEdad no es necesario por referencia, lo invocaste en el main, asi que debería ser void y no string, falta recibir nombreEscuderia, y nombreEscuderiaEXP deberia ser por referencia.
+- en informarCategoriaEdad: debería ser void y no string (pasaste categoría por referencia).
+Ejercicio 2:
+- no realiza
+
+Leandro Valentin Morel: 3
+Ejercicio 1:
+- la condición del while es && en vez de ||.
+- está mal la condición del segundo while (j==10), debería ser j<10.
+- la invocación de informarCategoria debería ir fuera del for.
+- no reinicias sumaEdades a 0 en el while.
+- en calcularMayorEdad: la función la declaraste como int y devuelve un string, no pedia guardar la escuderia (solo la edad), edadMayor debería recibirla por parámetro y no declararla, sino se pisaría siempre.
+- en calcularMayorEscuderia: la función la declaraste como int y devuelve un string, sumaEdadMax y escuderiaMax las debería recibir por parámetro y no declararlas (sumaEdadMax por referencia).
+- informarCategoriaEdad: no realiza.
+Ejercicio 2:
+- la declaración de i esta mal en el for (int i<num1), era int i=num1+1.
+
+Angel Torres Nuñez: 3
+Ejercicio 1:
+- esta mal la condición del while (escuderia<=20 || idEscuderia==-1), era (escuderia<20 && idEscuderia!=-1).
+- el id se pide afuera del while y al final (es posible que se ingrese -1 directamente).
+- en el main a las funciones no les pasas los parámetros.
+- mal acumulado el acumEdad.
+
+Facundo Manfredi: 3
+Ejercicio 1:
+- mejor un while que un do while (es posible que se ingrese -1 directamente).
+- la condición del while era && en vez de ||, tampoco.
+- si ya hiciste un for en el main el for en pilotos esta de mas.
+- no invocas calcularMayorEdad en ningún momento.
+- en calcularMayorEdad: si devolves mayorEdad no es necesario recibir por referencia, edad no era necesario por referencia.
+- en mayorEscuderia: si devolves mayorEscuderia no es necesario por referencia, nombreEscuderia y cantPilotos no era por referencia, mayorPiloto si era por referencia.
+- en infoEdad: cantPilotos no era necesario por referencia.
+Ejercicio 2: 
+- mal interpretado.
+
+Gutierrez Andres Enrique: 9
+Ejercicio 1:
+- mejor un while que un do while (es posible que se ingrese -1 directamente).
+Ejercicio 2:
+- ok.
+
+Veronica Garcilazo: 7
+Ejercicio 1:
+- la condición del while es && en vez de ||.
+- la invocación de calcularMayorEdad era dentro el for.
+- la invocación de calcularMayorEscuderia era dentro del while.
+- la invocación de categoriaEdad iba fuera del for.
+- en calcularMayorEdad y calcularMayorEscuderia: si los devolves, no es necesario pasarlos por referencia.
+Ejercicio 2:
+- la i comienza desde a+1 (el numero no se incluye).
+
+Diana Alali: 6
+Ejercicio 1:
+- La invocación a las funciones no están en el main donde corresponden.
+- no incrementa cantEscuderias en el while.
+- no resetea edadEscuderia en el while.
+- en calcularMayorEdad: mayorEdad debería recibirla por parámetro y no declararla.
+- en calcularMayorEscuderia: lo mismo para nombreMayorEscuderia y mayorEscuderia.
+Ejercicio 2:
+- ok
+
+Lihuen Cortiana:
+Ejercicio 1:
+- el pedido del nombre debería estar solo una vez y al principio del while.
+- la condición del while era && en vez de ||.
+- en calcularMayorEscuderia: el nombreMayor debería recibirlo por parámetro y no declararlo.
+
+Alejandro Nieto: 8
+Ejercicio 1:
+- la condición del while era != -1
+- el pedido del id del piloto era una vez fuera del while y una vez al final.
+- hay algunas validaciones que no son necesarias.
+
+Mika david Sinde: 9
+- mejor un while que un do while (es posible que se ingrese -1 directamente).
+- la invocación de calcularGanador iba fuera del for (asi calcula una vez y no 10).
+
+Lucas Marinkovic: 8
+Ejercicio 1:
+- en la condición del while va && en vez de ||.
+- no es necesario dos acumuladores de tiempo.
+- calcularMejorTiempo no pedia el nombre, solo el tiempo.
+
+Maria Laura Eroles: 4
+Ejercicio 1:
+- el primer pedido de idCompetidor iba fuera del while (es posible que se ingrese -1 directamente).
+- la invocación de calcularGanador iba dentro del while, para que calcule una vez que termina cada competidor.
+- mal interpretado el informarCambioDeNeumaticos.
+- en calcularMejorTiempo: menor tiempo debería recibirlo por parámetro y no declararlo (sino se pisaría constantemente), no era necesario el nombre, esta declarado como int pero no retorna nada.
+- en calcularGanador: lo mismo para el nombre y el puntaje (uno debería devolverlo y otro recibirlo por referencia, o los dos por referencia).
+- en informarCambioDeNeumaticos: no reseteas el contador, no era necesario recibir el nombre.
+Ejercicio 2:
+- el return fuera del for!!!
+
+Nuñez Johan: 3
+Ejercicio 1:
+- el primer pedido de idCompetidor iba fuera del while (es posible que se ingrese -1 directamente).
+- la condición del while es and en vez de or.
+- no invocas calcularGanador, no reseteas contadores, no incrementas cantCompetidor, no pedis otro idCompetidor,no imprimis los resultados.
+- en calcularPuntaje: no declaras los tipos de variable, tiempoCompetidor no es necesario por referencia.
+- en informarCambioDeNeumaticos: no reseteas el contador, el acum no es necesario
+- calcularGanador: no realiza.
+
+Santiago Vazquez: 2
+Ejercicio 1:
+- el primer pedido de idCompetidor iba fuera del while (es posible que se ingrese -1 directamente).
+- la condición del while es && en vez de ||.
+- el puntaje no se esta acumulando correctamente.
+- no acumulas el tiempo en ninguna variable, ni resetearla en el main.
+- la invocación de calcularGanador debería ir fuera del for.
+- no pedis otro idCompetidor al final del while.
+- en las funciones, no definís el tipo de variable en los parámetros.
+- en calcularGanador: no esta declarado en ningún lado ganador ni máximo puntaje.
+- en vueltaRecord: no esta declarado vueltaRecord, no pedia el nombre del competidor.
+Ejercicio 2:
+- grave error de concepto, deberías usar un for que itere diez veces cambiando una variable, no usar 10 variables.
+
+Gabriel Baluzzo: 9
+Ejercicio 1:
+- la condición del while es && en vez de ||.
+- en informarCambioDeNeumaticos: falta resetear el contador.
+
+Ramiro Damer: 5
+Ejercicio 1:
+- no es necesario el mayorPts
+- en el main las variables que pasamos por parámetro a una función no van con su tipo de dato.
+- la invocación a las funciones que retornan algo las deberías guardar en una variable en el main (calcularMejorTiempo y calcularGanador).
+- el ultimo pedido idCompetidor debería ir adentro del while.
+- no incrementas el máximoCompetidores.
+- en calcularMejorTiempo y calcularGanador: si los devolves, no hace falta recibirlos por parámetro.
+- en calcularGanador: el nombreMayor debería recibirlo por parámetro y no declararlo (sino se pisaría constantemente).
+- informarCambioDeNeumaticos: no realiza.
+
+Nahuel Fabro: 6
+Ejercicio 1:
+- mejor un while que un do while (es probable que se ingrese -1 directamente).
+- la condición del while debería tener el idCompetidor != -1 y no un break, la salida se administra desde la condición del while.
+- el for debería estar en el main y no en calcularPuntaje.
+- hay un do while de mas en calcularPuntaje.
+- calcularPuntaje: se debe encargar de una sola cosa especifica, que es calcular el puntaje del jugador, no puede tener la lógica del ejercicio en la función.
+
+Camila Besse: 4
+- la condición del while es && en vez de ||.
+- el id debe ser != -1 no == -1.
+- calcularGanador nunca es invocada en el main.
+- calcularPuntaje: se debe encargar de una sola cosa especifica, que es calcular el puntaje del jugador, no puede tener toda la lógica del ejercicio en la función.
+- informarCambioDeNeumaticos y calcularMejorTiempo: no realiza.
+- calcularGanador: el puntajeMayor y nombreGanador debería recibirlo por parámetro y no declararlo, sino se pisaría constantemente.
+
+Emilio Escobar: 7
+Ejercicio 1:
+- mejor un while que un do while (es posible que se ingrese -1 directamente).
+- en las funciones no declaras el tipo de variable de los parámetros.
+- el acumuladorDeNeumaticos tendría que acumularse en el main y no en la función.
+- en calcularMejorTiempo y calcularGanador: el condicional z==1 debería ser z==0.
+
+Gonzalo Adrian Fleita: 3
+- la condición del while era (idCompetidor != -1 && cantComp<20), la tuya fue (idCompetidor != 0 || cantComp>20).
+- el pedido del nombre del competidor debería estar dentro del while.
+- calcularMejorTiempo debería estar invocado dentro del for.
+- informarCambioDeNeumaticos nunca es invocado.
+- falta otro pedido del idCompetidor dentro del while, sino quedaría un bucle infinito.
+- en calcularPuntaje: se debe encargar de una sola cosa especifica, que es calcular el puntaje del jugador, no puede tener la lógica del ejercicio en la función.
+- en informarCambioDeNeumaticos: mal resuelto.
+- calcularGanador: no realiza.
+
+Matias Velazquez: 3
+Ejercicio 1:
+- el pedido del nombre del competidor debería estar dentro del while.
+- la condición del while era && en vez de ||.
+- informarCambioDeNeumaticos: mal realizado.
+- calcularPuntaje, calcularMejorTiempo, calcularGanador: no realiza.
+
+Fiorella Bueno: 7
+Ejercicio 1:
+- mejor un while que un do while (es probable que se ingrese -1 directamente).
+- la condición del while era && en vez de ||.
+- la invocación de calcularGanador iba fuera del for.
+- puntajeComp no se resetea en el while.
+- calcularPuntaje: falta declarar la variable puntaje.
+- calcularMejorTiempo: mejorTiempo deberia recibirlo por referencia (o devolverlo).
+
+Gonzalo Garcia Madotti: 6
+- falta la condición en el while de contador<20.
+- el if que pusiste en el main calculando el mejor tiempo debería estar en la función calcularMejorTiempo (que no fue realizada).
+- esta duplicado el if de calcularGanador.
+- no se resetea sumatoriaPuntaje en el while.
+- falta pedir otro idCompetidor al final del while, sino quedaría un bucle infinito.
+
+Ivan Fernandez: 3
+- era un while y un for, no dos fors.
+- el ingreso de competidores podia cortarse en el medio, esta mal realizado.
+- hay un bucle de mas en el ejercicio (mal interpretado). 
+- eran 10 pistas no 20.
+- la invocación de calcularGanador iba dentro del while.
+- nunca se invocan calcularMejorTiempo ni informarCambioDeNeumaticos.
+- en calcularGanador: debería recibir por referencia nombreCompetidorGanador y no nombreCompetidor.
+- calcularMejorTiempo y informarCambioDeNeumaticos: no realiza.
+
+Tobias Ezequiel Pereyra: 6
+Ejercicio 1:
+- el nombre del competidor debería pedirlo solo adentro del while (es posible que se ingrese -1 directamente).
+- no era un for de 20 competidores (podían ser menos de 20), lo correcto era otra condición en el while competidores<20.
+- no se resetea acumulador_segs en el while.
+- habría que guardar el mejorTiempo en una variable si es que la función lo retorna.
+- se acumula mal el puntaje (es necesario += y no =).
+- en calcularGanador: falta pasar nombre_ganador por referencia.
+- en informarCambioDeNeumatico: falta resetear el contador (y pasarlo por referencia).
+
+Valentino Armari: 8
+Ejercicio 1:
+- es mejor un while que un do while (es posible que se ingrese -1 directamente).
+- la condición del while va && en vez de ||.
+- en calcularPuntaje: si lo vas a acumular en la función y no en el main, puntaje debería recibirlo por parámetro.
+
+Santino Agatiello: 9
+- la condición del while era and en vez de or.
+- en calcularMejorTiempo: mejorTiempo debería recibirlo por parámetro y no declararlo (sino se pisaría constantemente).
+
+Santiago Vassallo: 9
+Ejercicio 1:
+- la condición del while era && en vez de ||.
+
+Joaquin Simiele: 4
+Ejercicio 1:
+- el pedido del nombre se hace solo dentro del while (es probable que se ingrese -1 directamente).
+- no era un for de 20 competidores (podían ser menos de 20), lo correcto era otra condición en el while competidores<20.
+- no se resetea puntaje ni tiempoCompetidor en el while.
+- no se invoca a calcularGanador.
+- en calcularPuntaje: si lo acumulas en la función, puntaje deberías recibirlo por parámetro y no declararlo.
+- en calcularMejorTiempo: si lo recibís por referencia y no lo devolves debería ser void y no int, esta duplicado (lo declaraste otra vez en la función).
+- informarCambioDeNeumaticos: mal realizado.
+- calcularGanador: no realiza.
+
+Sayen Bertani: 3
+Ejercicio 1:
+- mejor un while que un do while (es probable que se ingrese -1 directamente).
+- podrías haber usado el for de los pilotos en el while en vez de usar un while y dos for, te ahorrabas un bucle (pierde eficiencia el código).
+- la condición del while era && en vez de ||.
+- esta incompleto el main.
+- calcularGanador, calcularMejorTiempo, informarCambioDeNeumaticos: no realiza.
+
+Franco Ludueña: 9
+Ejercicio 1:
+- el pedido del nombre se hace solo dentro del while (es probable que se ingrese -1 directamente).
+
+Leguizamon Tobias: 8
+Ejercicio 1:
+- el pedido del nombre se hace solo dentro del while (es probable que se ingrese -1 directamente).
+- la condición del while era && en vez de ||.
+- el reseteo de tiempoTotal iba en el while y no en el for.
+
+Ramiro Gomez Rivelli: 8
+Ejercicio 1:
+- el pedido del nombre se hace solo dentro del while (es probable que se ingrese -1 directamente).
+- la condición del while era && en vez de ||.
+- en calcularPuntaje: se debe encargar de una sola cosa especifica, que es calcular el puntaje del jugador, no puede tener la lógica del ejercicio en la función.
+
+Michael Meneses: 8
+- mejor un while que un do while (es probable que se ingrese -1 directamente).
+- la condición del while debería tener el idCompetidor != -1 y no un break, la salida se administra desde la condición del while.
+- falta resetear el contadorSeg en el while.
+
+Juan Damelio: 8
+Ejercicio 1: 
+- puntaje y acumSegundos se resetean en el while y no en el for.
+- la invocación de calcularGanador iba fuera del for (asi se calcula 1 vez y no 10 veces).
+- mal acumulado el puntaje (necesitas += y no =).
+

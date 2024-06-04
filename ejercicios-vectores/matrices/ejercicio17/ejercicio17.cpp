@@ -53,7 +53,7 @@ int main () {
     }
 
     for (int j = 0; j < N; j++) {
-        cout << VECSUMCOL[j] << endl;
+        cout <<"Suma de la columna "<< j << ": " << VECSUMCOL[j] << endl;
     }
 
     // d
@@ -67,7 +67,7 @@ int main () {
     }
 
     for (int i=0;i<M;i++) {
-        cout << VECMAXFIL[i] << endl;
+        cout << "Valor maximo de la fila "<< i << ": " << VECMAXFIL[i] << endl;
     }
 
     return 0;
